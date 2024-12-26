@@ -1,3 +1,4 @@
+# 假如文件转换有问题，可能是由于开启了只读模式，或者是文章太长。微软的锅。
 import tkinter as tk
 from tkinter import filedialog, messagebox
 import os
@@ -10,13 +11,13 @@ class MarkItDownGUI:
         self.root.geometry("600x400")  # 初始窗口大小
         self.root.resizable(False, False)  # 固定窗口大小
 
-        # 高分辨率屏幕优化
+        # 高分辨率屏幕优化，没什么用，但能看起来没那么糊
         try:
             from ctypes import windll
             windll.shcore.SetProcessDpiAwareness(1)
         except Exception as e:
             print("高分辨率适配失败：", e)
-
+        #下面这一步纯属屎上雕花
         # 输入文件路径
         self.input_file = tk.StringVar()
         tk.Label(root, text="选择输入文件:", font=("Arial", 12)).pack(pady=10)
